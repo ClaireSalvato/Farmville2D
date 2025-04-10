@@ -10,6 +10,40 @@ public class MyFarm {
 
         // declare a 2D grid of plots
 
+        public void printGrid() {
+            for(int x = 0; x < grid.length; x++) {
+                for (int y = 0; y < grid[0].length; y++) {
+                    System.out.println("planting at row " + x +
+                            ", column " + y);
+                    grid[x][y] = new Plot();
+                    grid[x][y].printPlotInfo();
+                }
+            }
+        }
+
+        public void totalPlants() {
+            // how many plants are there in total across all plots?
+            int total = 0;
+            for(int x = 0; x < grid.length; x++) {
+                for (int y = 0; y < grid[x].length; y++) {
+                    total = total + grid[x][y].numberOfPlants;
+                }
+            }
+            System.out.println("There are " + total + " plants");
+        }
+
+        // construct a 2D grid of plots
+        grid = new Plot[3][4]; // 3 rows, 4 columns
+
+// fill a 2D grid of plots
+        for(int a = 0; a < grid.length; a++) { // rows
+            for (int b = 0; b < grid[a].length; b++) { // columns
+                System.out.println("planting at row " + a +
+                        ", column " + b);
+                grid[a][b] = new Plot();
+            }
+        }
+
         // construct a 2D grid of plots
 
 
